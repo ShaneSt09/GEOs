@@ -9,7 +9,7 @@ from .models import Community
 # Create your views here.
  
 def Import_Excel_Pandas(request):
-     
+
     if request.method == 'POST' and request.FILES['myfile']:      
         myfile = request.FILES['myfile']
         fs = FileSystemStorage()
@@ -21,12 +21,14 @@ def Import_Excel_Pandas(request):
             obj = Community.objects.create(Name=dbframe.Name, Type=dbframe.Type, Parish=dbframe.Parish,
                                             ParishCode=dbframe.ParishCode, Longitude=dbframe.Longitude,
                                             Latitude=dbframe.Latitude)
-         
+
             obj.save()
             print(dbframe)
+
+        messages.add_message(request, messages.INFO, 'Form submitted successfully.')
+
         return render(request, 'GEOs.html', {
                 'uploaded_file_url': uploaded_file_url
-            }, {'DataFrame':dbframe})
-            
-    messages.add_message(request, messages.INFO, 'Form submitted successfully.')   
+            })
+
     return render(request, 'GEOs.html',{})
