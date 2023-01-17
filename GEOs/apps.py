@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class GeosConfig(AppConfig):
+class geosConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'GEOs'
+    name = 'geos'
