@@ -10,11 +10,11 @@ from .models import Community
  
 def Import_Excel_Pandas(request):
 
-    if request.method == 'POST' and request.FILES['myfile']:      
+    if request.method == 'POST' and request.FILES['myfile']:
         myfile = request.FILES['myfile']
         fs = FileSystemStorage()
         filename = fs.save(myfile.name, myfile)
-        uploaded_file_url = fs.url(filename)              
+        uploaded_file_url = fs.url(filename)
         impexceldata = pd.read_excel(filename)
         dbframe = impexceldata
         for dbframe in dbframe.itertuples():
