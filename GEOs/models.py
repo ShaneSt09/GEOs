@@ -17,7 +17,6 @@ class Community(models.Model):
 class CommunityType(models.Model):
     objects = models.Manager()
 
-    type = models.CharField(max_length=50)
     name = models.CharField(max_length=100, unique=True)
 
     def __str__(self):
@@ -26,7 +25,6 @@ class CommunityType(models.Model):
 class Parish(models.Model):
     objects = models.Manager()
 
-    parish = models.CharField(max_length=10)
     code = models.CharField(max_length=10)
     name = models.CharField(max_length=100, unique=True)
 
