@@ -3,12 +3,12 @@ from . import views
 from django.conf import settings
 
 urlpatterns = [
-    path('communitytype/', views.getCommunityType),
+    path('community-types/', views.getCommunityType),
     path('postcommunitytype/', views.postCommunityType),
 
-    path('parish/', views.getParish),
+    path('parishes/', views.getParish),
     path('postparish/', views.postParish),
 
-    path('community/', views.getCommunity),
-    path('postcommunity/', views.postCommunity),
+    path('communities/', views.getCommunity),
+    path('postcommunit/', views.postCommunity),
 ]

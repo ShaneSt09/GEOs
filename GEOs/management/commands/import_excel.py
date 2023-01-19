@@ -15,7 +15,6 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument('input_path')
 
-    @transaction.atomic
     def handle(self, *args, **options):
         with transaction.atomic():
 
