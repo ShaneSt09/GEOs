@@ -16,7 +16,7 @@ class ParishAdmin(admin.ModelAdmin):
 @admin.register(Community)
 class CommunityAdmin(admin.ModelAdmin):
     ordering = ['name']
-    list_display = ['name', 'parish', 'type']
+    list_display = ['name', 'parish', 'type', 'lat', 'lng']
 
 
 

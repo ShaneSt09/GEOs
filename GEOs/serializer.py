@@ -6,7 +6,7 @@ from .models import Parish
 class CommunitySerializer(serializers.ModelSerializer):
     class Meta:
         model = Community
-        fields = ['name', 'parish', 'type']
+        fields = ['name', 'parish', 'type', 'lat', 'lng']
 
 class CommunityTypeSerializer(serializers.ModelSerializer):
     class Meta:

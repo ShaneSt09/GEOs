@@ -1,4 +1,6 @@
-# 2023-01-19
+# TODO
+first task of tomorrow - migrate project to new repo(local project as well)
+## 2023-01-19
  1. change project name to "opendatadm"
  2. change directory structure <code folder>/<project folder>/<app folder> , eg. "opendatadm/opendatadm/geos"
  3. create separate app for APIs, and place within "geos" directory, eg. "opendatadm/opendatadm/geos/apis/v202301"
@@ -13,9 +15,10 @@
  12. Use [Nested Relations](https://www.django-rest-framework.org/api-guide/relations/#nested-relationships) to the `Community` serializer
  13. allow non-API key based access when in dev mode
  14. add app namespacing to app level `urls.py
- 15.  install and setup `flake8` for project
- 
-# 2023-01-18
+ 15. install and setup `flake8` for project
+ 16. create a "data" directory, and move database into it
+
+## 2023-01-18
  1. title/proper case all model names within admin **COMPLETED**
  2. sort community type by name (only within admin) **COMPLETED**
  3. fix pluralization of "community" of model - added "verbose_name_plural" to class meta.**COMPLETED**
