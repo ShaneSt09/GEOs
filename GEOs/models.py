@@ -1,9 +1,32 @@
 from django.db import models
-from django_ulid.models import default, ULIDField
+
+
+class CommunityType(models.Model):
+    objects = models.Manager()
+
+    name = models.CharField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Community Type"
+
+class Parish(models.Model):
+    objects = models.Manager()
+
+    code = models.CharField(max_length=10)
+    name = models.CharField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Parish"
+        verbose_name_plural = "Parishes"
 
 class Community(models.Model):
     objects = models.Manager()
-    id = ULIDField(default=default, primary_key=True, editable=False)
 
     parish = models.ForeignKey('Parish', on_delete=models.PROTECT)
     type = models.ForeignKey('CommunityType', on_delete=models.PROTECT)
@@ -13,40 +36,13 @@ class Community(models.Model):
     lat = models.DecimalField('Latitude', max_digits=15, decimal_places=8, null=True, blank=True)
 
     class Meta:
-        verbose_name_plural = "communities"
+        verbose_name = "Community"
+        verbose_name_plural = "Communities"
 
     def __str__(self):
         return self.name
 
-    def __str__(self):
-        return self.parish
 
-    def __str__(self):
-        return str(self.type)
 
-class CommunityType(models.Model):
-    objects = models.Manager()
-    id = ULIDField(default=default, primary_key=True, editable=False)
-
-    name = models.CharField(max_length=100, unique=True)
-
-    def __str__(self):
-        return self.name
-
-class Parish(models.Model):
-    objects = models.Manager()
-
-    id = ULIDField(default=default, primary_key=True, editable=False)
-    code = models.CharField(max_length=10)
-    name = models.CharField(max_length=100, unique=True)
-
-    class Meta:
-        verbose_name_plural = "parishes"
-
-    def __str__(self):
-        return self.name
-    
-    def __str__(self):
-        return self.code
 
 
