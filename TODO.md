@@ -1,5 +1,5 @@
 # TODO
-first task of tomorrow - migrate project to new repo(local project as well)
+
 ## 2023-01-19
  1. change project name to "opendatadm"
  2. change directory structure <code folder>/<project folder>/<app folder> , eg. "opendatadm/opendatadm/geos"
